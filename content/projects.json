@@ -1,16 +1,27 @@
 {
   "projects": [
     {
-      "label": "Project F",
+      "label": "Project A",
       "published": true,
-      "title": "Project Testing123",
-      "subtitle": "THIE IS A NEW PROJECT",
-      "description": "THIE IS A NEW PROJECT NAMED \"Project Testing\"",
-      "image": "https://png.pngtree.com/thumb_back/fh260/background/20241013/pngtree-poland-s-tatra-national-park-summer-mountains-and-forests-breathtaking-views-image_16352573.jpg",
-      "imageAlt": "MTN"
+      "title": "Sound Wave",
+      "subtitle": "This is a music website. Pure design only.",
+      "description": "I design this just for fun.",
+      "image": "https://raw.githubusercontent.com/JuniperLin/Juniper_Profolio/refs/heads/main/img/Sound-Wave.png",
+      "imageAlt": "Sound Wave",
+      "projectUrl": "https://juniperlin.github.io/Soundwave/"
     },
     {
-      "label": "Project G",
+      "label": "Project B",
+      "published": true,
+      "image": "https://raw.githubusercontent.com/JuniperLin/Juniper_Profolio/refs/heads/main/img/The-%20Rosa.png",
+      "imageAlt": "The Rosa",
+      "title": "The Rosa",
+      "subtitle": "It is a website for a restaurant.",
+      "description": "Create this just for practice. No hard coding. Just for cool design only.",
+      "projectUrl": "https://juniperlin.github.io/The-Rosa/"
+    },
+    {
+      "label": "Project D",
       "published": true,
       "title": "Jenny Turtle",
       "subtitle": "Cool Turtle Project",
