@@ -624,6 +624,7 @@
         document.addEventListener('DOMContentLoaded', async () => {
             await loadProjects();
             await loadHeroText();
+            await loadAbout();
         });
 
         // Load and generate project cards dynamically
@@ -691,26 +692,44 @@
                 const response = await fetch('/content/settings/hero.json');
                 const hero = await response.json();
 
-                // Find hero text elements
-                const heroSection = document.querySelector('section');
+                // Find hero section (first section in page)
+                const heroSection = document.querySelector('section.min-h-screen');
                 if (!heroSection) return;
 
-                const textElements = heroSection.querySelectorAll('.hero-text h1, .reveal-text h1');
-                if (textElements.length > 0) {
-                    // Try to find the main hero heading
-                    const headings = heroSection.querySelectorAll('h1');
-                    headings.forEach(h1 => {
-                        const parent = h1.closest('.reveal-text');
-                        if (parent) {
-                            const index = Array.from(heroSection.querySelectorAll('.reveal-text')).indexOf(parent);
-                            if (index === 0 && hero.line1) h1.innerHTML = hero.line1;
-                            if (index === 1 && hero.line2) h1.innerHTML = hero.line2;
-                            if (index === 2 && hero.line3) h1.innerHTML = hero.line3;
-                        }
-                    });
+                // Find the three text spans inside h1
+                const textSpans = heroSection.querySelectorAll('h1 .reveal-text');
+                if (textSpans.length >= 3) {
+                    if (hero.line1) textSpans[0].textContent = hero.line1;
+                    if (hero.line2) textSpans[1].textContent = hero.line2;
+                    if (hero.line3) textSpans[2].textContent = hero.line3;
                 }
             } catch (error) {
                 console.log('Using static hero text');
+            }
+        }
+
+        // Load About section from CMS
+        async function loadAbout() {
+            try {
+                const response = await fetch('/content/settings/about.json');
+                const about = await response.json();
+
+                // Find about section (section with gray background)
+                const aboutSection = document.querySelector('section.bg-gray-200');
+                if (!aboutSection) return;
+
+                // Update name in the highlighted span
+                const nameSpan = aboutSection.querySelector('.bg-accent');
+                if (nameSpan && about.name) nameSpan.textContent = about.name;
+
+                // Update paragraphs
+                const paragraphs = aboutSection.querySelectorAll('.space-y-6 p.text-dark\\/80');
+                if (paragraphs.length >= 2) {
+                    if (about.paragraph1) paragraphs[0].innerHTML = `My name is <span class="bg-accent text-dark font-semibold px-2 py-1">${about.name || 'Juniper'}</span>, ${about.paragraph1}`;
+                    if (about.paragraph2) paragraphs[1].textContent = about.paragraph2;
+                }
+            } catch (error) {
+                console.log('Using static about text');
             }
         }
     </script>
