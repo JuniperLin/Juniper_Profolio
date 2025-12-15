@@ -618,65 +618,101 @@
             cursor.style.opacity = '1';
         });
     </script>
-
-    <!-- Dynamic Project Loader from CMS -->
+    <!-- Dynamic Content Loader from CMS -->
     <script>
-        // Load projects from CMS JSON file
+        // Load all dynamic content from CMS
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadProjects();
+            await loadHeroText();
+        });
+
+        // Load and generate project cards dynamically
         async function loadProjects() {
             try {
                 const response = await fetch('/content/projects.json');
                 const data = await response.json();
                 const projects = data.projects.filter(p => p.published !== false);
 
-                // Update project cards
-                updateProjectCards(projects);
+                // Find the sticky cards container
+                const stickyContainer = document.querySelector('#works .relative');
+                if (!stickyContainer || projects.length === 0) return;
+
+                // Clear existing content and build new cards
+                stickyContainer.innerHTML = '';
+
+                projects.forEach((project, index) => {
+                    const bgClass = index % 2 === 0 ? 'bg-dark' : 'bg-darker';
+                    const zIndex = (index + 1) * 10;
+
+                    // Add spacer between cards (except before first)
+                    if (index > 0) {
+                        stickyContainer.innerHTML += `<div class="h-[50vh]"></div>`;
+                    }
+
+                    // Generate project card
+                    stickyContainer.innerHTML += `
+                        <div class="sticky top-0 min-h-screen flex items-center px-6 md:px-12 ${bgClass}" style="z-index: ${zIndex}">
+                            <div class="max-w-7xl mx-auto w-full py-12">
+                                <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal-text ${bgClass} rounded-xl p-6 md:p-10 border border-border">
+                                    <div>
+                                        <span class="inline-block px-4 py-2 bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase rounded-full mb-6">
+                                            ${project.label || 'Project ' + String.fromCharCode(65 + index)}
+                                        </span>
+                                        <h3 class="font-display font-semibold text-2xl md:text-3xl tracking-tight mb-4 text-white">
+                                            ${project.title}
+                                        </h3>
+                                        <p class="text-accent text-lg mb-4">
+                                            ${project.subtitle}
+                                        </p>
+                                        <p class="text-muted leading-relaxed">
+                                            ${project.description}
+                                        </p>
+                                    </div>
+                                    <div class="relative overflow-hidden rounded-lg">
+                                        <img src="${project.image}" alt="${project.imageAlt || project.title}" class="w-full aspect-video object-cover img-hover">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                // Add end spacer
+                stickyContainer.innerHTML += `<div class="h-[30vh] ${projects.length % 2 === 0 ? 'bg-darker' : 'bg-dark'}"></div>`;
+
             } catch (error) {
-                console.log('Projects loaded from static HTML (CMS data not available)');
+                console.log('Using static project cards');
             }
         }
 
-        function updateProjectCards(projects) {
-            // Find all project cards by their labels
-            const projectLabels = ['Project A', 'Project B', 'Project C', 'Project D', 'Project E'];
+        // Load Hero text from CMS
+        async function loadHeroText() {
+            try {
+                const response = await fetch('/content/settings/hero.json');
+                const hero = await response.json();
 
-            projects.forEach((project, index) => {
-                if (index >= 5) return; // Only update first 5 cards
+                // Find hero text elements
+                const heroSection = document.querySelector('section');
+                if (!heroSection) return;
 
-                // Find elements containing the project label
-                const labelSpans = document.querySelectorAll('span');
-                labelSpans.forEach(span => {
-                    if (span.textContent.trim() === projectLabels[index]) {
-                        const card = span.closest('.grid');
-                        if (card) {
-                            // Update label
-                            span.textContent = project.label || projectLabels[index];
-
-                            // Update title
-                            const title = card.querySelector('h3');
-                            if (title) title.textContent = project.title;
-
-                            // Update subtitle (first p with text-accent)
-                            const subtitle = card.querySelector('p.text-accent');
-                            if (subtitle) subtitle.textContent = project.subtitle;
-
-                            // Update description (p with text-muted)
-                            const description = card.querySelector('p.text-muted');
-                            if (description) description.textContent = project.description;
-
-                            // Update image
-                            const img = card.querySelector('img');
-                            if (img && project.image) {
-                                img.src = project.image;
-                                img.alt = project.imageAlt || project.title;
-                            }
+                const textElements = heroSection.querySelectorAll('.hero-text h1, .reveal-text h1');
+                if (textElements.length > 0) {
+                    // Try to find the main hero heading
+                    const headings = heroSection.querySelectorAll('h1');
+                    headings.forEach(h1 => {
+                        const parent = h1.closest('.reveal-text');
+                        if (parent) {
+                            const index = Array.from(heroSection.querySelectorAll('.reveal-text')).indexOf(parent);
+                            if (index === 0 && hero.line1) h1.innerHTML = hero.line1;
+                            if (index === 1 && hero.line2) h1.innerHTML = hero.line2;
+                            if (index === 2 && hero.line3) h1.innerHTML = hero.line3;
                         }
-                    }
-                });
-            });
+                    });
+                }
+            } catch (error) {
+                console.log('Using static hero text');
+            }
         }
-
-        // Load projects when page is ready
-        document.addEventListener('DOMContentLoaded', loadProjects);
     </script>
 
     <!-- Netlify Identity Redirect Script -->
