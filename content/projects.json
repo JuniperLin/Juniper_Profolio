@@ -1,51 +1,6 @@
 {
   "projects": [
     {
-      "title": "Internal Efficiency System123",
-      "label": "Project A",
-      "subtitle": "I recognized a bottleneck in our daily operations and didn't wait for permission to fix it.",
-      "description": "I architected and deployed a custom check-in system that streamlined attendance and logistics tracking. Built with modern web technologies, this tool proves I can diagnose a business pain point and prescribe a code-based cure.",
-      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-      "imageAlt": "Internal Efficiency System",
-      "published": true
-    },
-    {
-      "title": "Skeley: Automated Storytelling123",
-      "label": "Project B",
-      "subtitle": "In the age of AI, creativity is about curation and consistency.",
-      "description": "This project utilizes generative AI tools to build a cohesive brand identity for a skeleton character named \"Skeley\". It demonstrates my ability to control AI outputs, maintain visual consistency across media, and tell compelling stories—skills I now apply to modern web design.",
-      "image": "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?fm=jpg&q=60&w=3000",
-      "imageAlt": "Skeley Project",
-      "published": true
-    },
-    {
-      "title": "E-Commerce Platform123",
-      "label": "Project C",
-      "subtitle": "Building seamless shopping experiences with modern web technologies.",
-      "description": "A full-featured e-commerce solution with real-time inventory management, secure payment processing, and an intuitive admin dashboard. Built with React, Node.js, and Firebase for scalable performance.",
-      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-      "imageAlt": "E-Commerce Platform",
-      "published": true
-    },
-    {
-      "title": "Travel Planning App123",
-      "label": "Project D",
-      "subtitle": "Transforming travel chaos into organized adventures.",
-      "description": "An interactive travel planning application featuring horizontal scroll itineraries, real-time collaboration, and beautiful photo integration. Designed with the traveler's journey in mind.",
-      "image": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-      "imageAlt": "Travel Planning App",
-      "published": true
-    },
-    {
-      "title": "Dashboard Analytics123",
-      "label": "Project E",
-      "subtitle": "Data visualization that tells a story.",
-      "description": "A comprehensive analytics dashboard with real-time data visualization, customizable charts, and automated reporting. Empowers businesses to make data-driven decisions with clarity and confidence.",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-      "imageAlt": "Dashboard Analytics",
-      "published": true
-    },
-    {
       "label": "Project F",
       "published": true,
       "title": "Project Testing123",
