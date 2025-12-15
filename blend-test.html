@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mix Blend Mode Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        /* Fixed logo - KEY: no background, isolation: auto */
+        .fixed-logo {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 100;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            mix-blend-mode: difference;
+            pointer-events: none;
+        }
+
+        /* Sections with different backgrounds */
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .dark {
+            background-color: #1A1A1A;
+            color: white;
+        }
+
+        .lime {
+            background-color: #CCFF00;
+            color: black;
+        }
+
+        .white {
+            background-color: #F2F2F2;
+            color: black;
+        }
+
+        .gray {
+            background-color: #808080;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Fixed Logo with mix-blend-mode -->
+    <div class="fixed-logo">JUNIPER.</div>
+
+    <!-- Sections -->
+    <section class="section dark">
+        <span>Dark Section - Logo should be WHITE</span>
+    </section>
+
+    <section class="section lime">
+        <span>Lime Section - Logo should be PURPLE/BLUE</span>
+    </section>
+
+    <section class="section white">
+        <span>White Section - Logo should be BLACK</span>
+    </section>
+
+    <section class="section gray">
+        <span>Gray Section - Logo should be GRAY</span>
+    </section>
+</body>
+
+</html>

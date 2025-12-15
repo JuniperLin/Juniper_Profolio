@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juniper | Digital Presence Engineer</title>
+    <meta name="description"
+        content="Juniper - Code. Logistics. Empathy. Building digital experiences with technical precision and human connection.">
+
+    <!-- Fonts from Fontshare -->
+    <link
+        href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,500,600,700&f[]=satoshi@300,400,500,700,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        darker: '#050505',
+                        accent: '#c8ff00',
+                        muted: '#666666',
+                        border: '#1a1a1a'
+                    },
+                    fontFamily: {
+                        display: ['Clash Display', 'sans-serif'],
+                        body: ['Satoshi', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #c8ff00 #0a0a0a;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c8ff00;
+            border-radius: 4px;
+        }
+
+        /* JUNIPER Logo - Mix Blend Mode Effect */
+        .logo-blend {
+            mix-blend-mode: difference;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Text Styles */
+        .hero-digital {
+            color: white;
+            display: block;
+        }
+
+        .hero-presence {
+            display: block;
+            color: transparent;
+            -webkit-text-stroke: 2px white;
+            text-stroke: 2px white;
+        }
+
+        .hero-engineer {
+            display: block;
+            color: #c8ff00;
+        }
+
+        /* Text reveal animation - float up from below */
+        @keyframes revealUp {
+            0% {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(100%);
+            animation: revealUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Image hover effect */
+        .img-hover {
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+        }
+
+        .img-hover:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(200, 255, 0, 0.1);
+        }
+
+        /* Link underline effect */
+        .link-underline {
+            position: relative;
+        }
+
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .link-underline:hover::after {
+            width: 100%;
+        }
+
+        /* Accent background section for blend demonstration */
+        .bg-accent-section {
+            background: #c8ff00;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-body antialiased">
+
+    <!-- JUNIPER Logo - Fixed with mix-blend-mode on container -->
+    <div class="fixed top-6 left-6 md:left-12 z-[100]"
+        style="mix-blend-mode: difference; color: #FFFFFF; pointer-events: none;">
+        <a href="#" class="font-display font-bold text-2xl tracking-tighter"
+            style="pointer-events: auto; color: inherit;">JUNIPER.</a>
+    </div>
+
+    <!-- Navigation - Get in Touch Button -->
+    <nav class="fixed top-6 right-6 md:right-12 z-[100]"
+        style="mix-blend-mode: difference; color: #FFFFFF; pointer-events: none;">
+        <a href="#contact"
+            class="px-6 py-3 border border-current text-sm font-medium transition-all duration-300 hover:bg-[#c8ff00] hover:text-black hover:border-[#c8ff00]"
+            style="pointer-events: auto; color: inherit;">
+            Get in Touch
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center px-6 md:px-12">
+        <div class="w-full max-w-7xl mx-auto text-left">
+            <h1 class="font-display text-[14vw] leading-[0.8] font-semibold tracking-tighter uppercase">
+                <span class="block overflow-hidden">
+                    <span class="block reveal-text text-white" style="animation-delay: 0.1s;">DIGITAL</span>
+                </span>
+                <span class="block overflow-hidden">
+                    <span class="block reveal-text hero-presence" style="animation-delay: 0.2s;">PRESENCE</span>
+                </span>
+                <span class="block overflow-hidden">
+                    <span class="block reveal-text text-accent" style="animation-delay: 0.3s;">ENGINEER.</span>
+                </span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- About Section - Light Gray Background -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+                <div class="reveal-text">
+                    <h2 class="font-display font-semibold text-3xl md:text-4xl tracking-tight mb-8 text-dark">
+                        My path hasn't been <span class="text-accent">linear</span>.
+                    </h2>
+                    <div class="space-y-6 text-muted text-lg leading-relaxed">
+                        <p class="text-dark/80">
+                            My name is <span class="bg-accent text-dark font-semibold px-2 py-1">Juniper</span>,
+                            and that's my competitive
+                            advantage. Before I mastered React and Frontend architecture, I mastered the art of human
+                            connection in international sales and the precision of logistics at Lion Travel.
+                        </p>
+                        <p class="text-dark/80">
+                            I've worked across Australia and Taiwan, from high-end fashion to warehouse supply chains.
+                        </p>
+                    </div>
+                    <div class="mt-10 p-6 bg-white border-l-2 border-accent">
+                        <h3 class="text-accent font-semibold text-xl mb-4">Why does this matter to you?</h3>
+                        <p class="text-dark/70 leading-relaxed">
+                            Because I don't look at a website as just a collection of <code
+                                class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">&lt;div&gt;</code> tags. I
+                            see it as a digital storefront that needs to convert, function, and serve real humans. I
+                            combine technical precision with empathy to build tools that actually work for your
+                            business.
+                        </p>
+                    </div>
+                </div>
+                <div class="reveal-text">
+                    <div class="relative overflow-hidden rounded-lg aspect-[4/5]">
+                        <img src="https://images.unsplash.com/photo-1718160923807-ac9826b33adc?fm=jpg&q=60&w=3000"
+                            alt="The Non-Linear Dev" class="w-full h-full object-cover img-hover">
+                        <div
+                            class="absolute bottom-4 left-4 px-3 py-1 bg-dark/80 backdrop-blur-sm text-xs font-medium tracking-wider">
+                            The Non-Linear Dev
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Block Decoration -->
+    <section class="py-8 px-6 md:px-12 bg-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <pre class="font-mono text-dark/50 text-sm md:text-base"><code>&lt;div&gt;</code></pre>
+        </div>
+    </section>
+
+    <!-- Evidence of Skill Section - Black Background with Sticky Cards -->
+    <section class="bg-dark" id="works">
+        <!-- Title -->
+        <div class="max-w-7xl mx-auto px-6 md:px-12 pt-24 md:pt-32 pb-16">
+            <h2 class="font-display font-bold text-4xl md:text-5xl tracking-tight text-center reveal-text text-white">
+                Evidence of Skill
+            </h2>
+        </div>
+
+        <!-- Sticky Cards Container -->
+        <div class="relative">
+            <!-- Project A - First Card -->
+            <div class="sticky top-0 min-h-screen flex items-center px-6 md:px-12 bg-dark z-10">
+                <div class="max-w-7xl mx-auto w-full py-12">
+                    <div
+                        class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal-text bg-dark rounded-xl p-6 md:p-10 border border-border">
+                        <div>
+                            <span
+                                class="inline-block px-4 py-2 bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase rounded-full mb-6">
+                                Project A
+                            </span>
+                            <h3 class="font-display font-semibold text-2xl md:text-3xl tracking-tight mb-4 text-white">
+                                Internal Efficiency System
+                            </h3>
+                            <p class="text-accent text-lg mb-4">
+                                I recognized a bottleneck in our daily operations and didn't wait for permission to fix
+                                it.
+                            </p>
+                            <p class="text-muted leading-relaxed">
+                                I architected and deployed a custom check-in system that streamlined attendance and
+                                logistics tracking. Built with modern web technologies, this tool proves I can diagnose
+                                a business pain point and prescribe a code-based cure.
+                            </p>
+                        </div>
+                        <div class="relative overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                                alt="Internal Efficiency System" class="w-full aspect-video object-cover img-hover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Spacer - This creates the scrolling distance before overlap -->
+            <div class="h-[50vh]"></div>
+
+            <!-- Project B - Second Card (covers the first) -->
+            <div class="sticky top-0 min-h-screen flex items-center px-6 md:px-12 bg-darker z-20">
+                <div class="max-w-7xl mx-auto w-full py-12">
+                    <div
+                        class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal-text bg-darker rounded-xl p-6 md:p-10 border border-border">
+                        <div>
+                            <span
+                                class="inline-block px-4 py-2 bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase rounded-full mb-6">
+                                Project B
+                            </span>
+                            <h3 class="font-display font-semibold text-2xl md:text-3xl tracking-tight mb-4 text-white">
+                                Skeley: Automated Storytelling
+                            </h3>
+                            <p class="text-accent text-lg mb-4">
+                                In the age of AI, creativity is about curation and consistency.
+                            </p>
+                            <p class="text-muted leading-relaxed">
+                                This project utilizes generative AI tools to build a cohesive brand identity for a
+                                skeleton character named "Skeley". It demonstrates my ability to control AI outputs,
+                                maintain visual consistency across media, and tell compelling stories—skills I now apply
+                                to modern web design.
+                            </p>
+                        </div>
+                        <div class="relative overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?fm=jpg&q=60&w=3000"
+                                alt="Skeley Project" class="w-full aspect-video object-cover img-hover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Spacer -->
+            <div class="h-[50vh]"></div>
+
+            <!-- Project C -->
+            <div class="sticky top-0 min-h-screen flex items-center px-6 md:px-12 bg-dark z-30">
+                <div class="max-w-7xl mx-auto w-full py-12">
+                    <div
+                        class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal-text bg-dark rounded-xl p-6 md:p-10 border border-border">
+                        <div>
+                            <span
+                                class="inline-block px-4 py-2 bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase rounded-full mb-6">
+                                Project C
+                            </span>
+                            <h3 class="font-display font-semibold text-2xl md:text-3xl tracking-tight mb-4 text-white">
+                                E-Commerce Platform
+                            </h3>
+                            <p class="text-accent text-lg mb-4">
+                                Building seamless shopping experiences with modern web technologies.
+                            </p>
+                            <p class="text-muted leading-relaxed">
+                                A full-featured e-commerce solution with real-time inventory management,
+                                secure payment processing, and an intuitive admin dashboard. Built with
+                                React, Node.js, and Firebase for scalable performance.
+                            </p>
+                        </div>
+                        <div class="relative overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                                alt="E-Commerce Platform" class="w-full aspect-video object-cover img-hover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Spacer -->
+            <div class="h-[50vh]"></div>
+
+            <!-- Project D -->
+            <div class="sticky top-0 min-h-screen flex items-center px-6 md:px-12 bg-darker z-40">
+                <div class="max-w-7xl mx-auto w-full py-12">
+                    <div
+                        class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal-text bg-darker rounded-xl p-6 md:p-10 border border-border">
+                        <div>
+                            <span
+                                class="inline-block px-4 py-2 bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase rounded-full mb-6">
+                                Project D
+                            </span>
+                            <h3 class="font-display font-semibold text-2xl md:text-3xl tracking-tight mb-4 text-white">
+                                Travel Planning App
+                            </h3>
+                            <p class="text-accent text-lg mb-4">
+                                Transforming travel chaos into organized adventures.
+                            </p>
+                            <p class="text-muted leading-relaxed">
+                                An interactive travel planning application featuring horizontal scroll
+                                itineraries, real-time collaboration, and beautiful photo integration.
+                                Designed with the traveler's journey in mind.
+                            </p>
+                        </div>
+                        <div class="relative overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                                alt="Travel Planning App" class="w-full aspect-video object-cover img-hover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Spacer -->
+            <div class="h-[50vh]"></div>
+
+            <!-- Project E -->
+            <div class="sticky top-0 min-h-screen flex items-center px-6 md:px-12 bg-dark z-50">
+                <div class="max-w-7xl mx-auto w-full py-12">
+                    <div
+                        class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal-text bg-dark rounded-xl p-6 md:p-10 border border-border">
+                        <div>
+                            <span
+                                class="inline-block px-4 py-2 bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase rounded-full mb-6">
+                                Project E
+                            </span>
+                            <h3 class="font-display font-semibold text-2xl md:text-3xl tracking-tight mb-4 text-white">
+                                Dashboard Analytics
+                            </h3>
+                            <p class="text-accent text-lg mb-4">
+                                Data visualization that tells a story.
+                            </p>
+                            <p class="text-muted leading-relaxed">
+                                A comprehensive analytics dashboard with real-time data visualization,
+                                customizable charts, and automated reporting. Empowers businesses to
+                                make data-driven decisions with clarity and confidence.
+                            </p>
+                        </div>
+                        <div class="relative overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                                alt="Dashboard Analytics" class="w-full aspect-video object-cover img-hover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Spacer -->
+            <div class="h-[30vh] bg-dark"></div>
+        </div>
+    </section>
+
+    <!-- Services Section - Dark background -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-darker" id="services">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal-text">
+                <h2 class="font-display font-bold text-4xl md:text-5xl tracking-tight mb-4">
+                    Choose your Investment
+                </h2>
+                <p class="text-muted text-lg max-w-2xl mx-auto">
+                    Two distinct pathways to collaborate. Whether you need a product built or a skill learned.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 reveal-text">
+                <!-- Service 1 -->
+                <div class="card-hover p-8 md:p-10 bg-dark border border-border rounded-lg">
+                    <div class="w-14 h-14 flex items-center justify-center bg-accent/10 rounded-xl mb-6">
+                        <i data-lucide="code-2" class="w-7 h-7 text-accent"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-2xl tracking-tight mb-4">
+                        Custom Web Development
+                    </h3>
+                    <p class="text-muted leading-relaxed">
+                        I build high-performance landing pages or e-commerce frontends tailored to your market. I
+                        leverage my expertise in React, Tailwind, and Firebase to create assets that don't just look
+                        good—they perform.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="card-hover p-8 md:p-10 bg-dark border border-border rounded-lg">
+                    <div class="w-14 h-14 flex items-center justify-center bg-accent/10 rounded-xl mb-6">
+                        <i data-lucide="users" class="w-7 h-7 text-accent"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-2xl tracking-tight mb-4">
+                        1-on-1 Tech Empowerment
+                    </h3>
+                    <p class="text-muted leading-relaxed">
+                        I believe in "learning by doing." If you are a beginner wanting to understand AI tools, basic
+                        frontend logic, or how to streamline your own workflow, I offer personalized coaching sessions
+                        to help you build digital confidence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- White Section - Shows JUNIPER logo turns black -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-white" id="contact">
+        <div class="max-w-3xl mx-auto text-center reveal-text">
+            <h2 class="font-display font-bold text-3xl md:text-5xl tracking-tight mb-6 text-dark">
+                Ready to upgrade your digital presence?
+            </h2>
+            <p class="text-dark/60 text-lg leading-relaxed mb-10">
+                Whether you need a system built or a skill learned, I'm ready to talk. I approach every project with
+                the same care I give to my own passions—detail-oriented, dedicated, and human-centric.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <a href="mailto:juniper@example.com"
+                    class="px-8 py-4 bg-dark text-white font-semibold hover:bg-dark/90 transition-colors duration-300">
+                    Connect with Juniper
+                </a>
+                <a href="#"
+                    class="px-8 py-4 border border-dark/20 text-dark font-semibold hover:border-dark hover:bg-dark hover:text-white transition-all duration-300">
+                    Book a Consultation
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center gap-6">
+                <a href="#" class="text-dark/60 hover:text-dark transition-colors link-underline">
+                    LinkedIn
+                </a>
+                <a href="#" class="text-dark/60 hover:text-dark transition-colors link-underline">
+                    Twitter (X)
+                </a>
+                <a href="#" class="text-dark/60 hover:text-dark transition-colors link-underline">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 md:px-12 border-t border-border bg-dark">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-muted text-sm">
+                © 2024 Juniper Systems. Built with Purpose.
+            </p>
+            <a href="https://aidesigner.ai" target="_blank"
+                class="text-muted text-sm hover:text-accent transition-colors">
+                Made with AIDesigner
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-text').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Trigger hero animation on load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.reveal-text').forEach((el, i) => {
+                    setTimeout(() => el.classList.add('active'), i * 150);
+                });
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>
