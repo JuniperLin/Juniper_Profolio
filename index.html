@@ -13,6 +13,9 @@
         href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,500,600,700&f[]=satoshi@300,400,500,700,900&display=swap"
         rel="stylesheet">
 
+    <!-- Netlify Identity Widget for CMS login -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -614,6 +617,19 @@
         document.addEventListener('mouseenter', () => {
             cursor.style.opacity = '1';
         });
+    </script>
+
+    <!-- Netlify Identity Redirect Script -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
     </script>
 </body>
 
