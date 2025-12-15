@@ -668,7 +668,12 @@
                                         </p>
                                     </div>
                                     <div class="relative overflow-hidden rounded-lg">
-                                        <img src="${project.image}" alt="${project.imageAlt || project.title}" class="w-full aspect-video object-cover img-hover">
+                                        ${project.projectUrl
+                            ? `<a href="${project.projectUrl}" target="_blank" rel="noopener noreferrer" class="block cursor-pointer">
+                                                <img src="${project.image}" alt="${project.imageAlt || project.title}" class="w-full aspect-video object-cover img-hover">
+                                               </a>`
+                            : `<img src="${project.image}" alt="${project.imageAlt || project.title}" class="w-full aspect-video object-cover img-hover">`
+                        }
                                     </div>
                                 </div>
                             </div>

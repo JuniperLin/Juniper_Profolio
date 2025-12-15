@@ -31,4 +31,5 @@ collections:
               - { label: "描述 (Description)", name: "description", widget: "text" }
               - { label: "圖片網址 (Image URL)", name: "image", widget: "string" }
               - { label: "圖片說明 (Image Alt)", name: "imageAlt", widget: "string" }
+              - { label: "專案連結 (Project URL)", name: "projectUrl", widget: "string", required: false, hint: "點擊圖片時會連結到此網址" }
               - { label: "顯示 (Published)", name: "published", widget: "boolean", default: true }
