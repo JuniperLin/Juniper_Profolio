@@ -12,7 +12,7 @@ display_url: https://juniper-profolio.netlify.app
 
 # 內容集合
 collections:
-  # 網站資料
+  # 專案作品
   - name: "data"
     label: "網站資料 (Site Data)"
     files:
@@ -32,21 +32,3 @@ collections:
               - { label: "圖片網址 (Image URL)", name: "image", widget: "string" }
               - { label: "圖片說明 (Image Alt)", name: "imageAlt", widget: "string" }
               - { label: "顯示 (Published)", name: "published", widget: "boolean", default: true }
-
-      # 首頁標題
-      - name: "hero"
-        label: "首頁標題 (Hero)"
-        file: "content/settings/hero.json"
-        fields:
-          - { label: "第一行 (Line 1)", name: "line1", widget: "string" }
-          - { label: "第二行 (Line 2)", name: "line2", widget: "string" }
-          - { label: "第三行 (Line 3)", name: "line3", widget: "string" }
-
-      # 關於我
-      - name: "about"
-        label: "關於我 (About)"
-        file: "content/settings/about.json"
-        fields:
-          - { label: "名字 (Name)", name: "name", widget: "string" }
-          - { label: "介紹段落1 (Paragraph 1)", name: "paragraph1", widget: "text" }
-          - { label: "介紹段落2 (Paragraph 2)", name: "paragraph2", widget: "text" }

@@ -220,13 +220,13 @@
         <div class="w-full max-w-7xl mx-auto text-left">
             <h1 class="font-display text-[14vw] leading-[0.8] font-semibold tracking-tighter uppercase">
                 <span class="block overflow-hidden">
-                    <span class="block reveal-text text-white" style="animation-delay: 0.1s;">DIGITAL</span>
+                    <span class="block reveal-text text-white" style="animation-delay: 0.1s;">KIWISHEEP</span>
                 </span>
                 <span class="block overflow-hidden">
-                    <span class="block reveal-text hero-presence" style="animation-delay: 0.2s;">PRESENCE</span>
+                    <span class="block reveal-text hero-presence" style="animation-delay: 0.2s;">DESIGN</span>
                 </span>
                 <span class="block overflow-hidden">
-                    <span class="block reveal-text text-accent" style="animation-delay: 0.3s;">ENGINEER.</span>
+                    <span class="block reveal-text text-accent" style="animation-delay: 0.3s;">STUDIO.</span>
                 </span>
             </h1>
         </div>
@@ -620,11 +620,9 @@
     </script>
     <!-- Dynamic Content Loader from CMS -->
     <script>
-        // Load all dynamic content from CMS
+        // Load projects from CMS
         document.addEventListener('DOMContentLoaded', async () => {
             await loadProjects();
-            await loadHeroText();
-            await loadAbout();
         });
 
         // Load and generate project cards dynamically
@@ -683,53 +681,6 @@
 
             } catch (error) {
                 console.log('Using static project cards');
-            }
-        }
-
-        // Load Hero text from CMS
-        async function loadHeroText() {
-            try {
-                const response = await fetch('/content/settings/hero.json');
-                const hero = await response.json();
-
-                // Find hero section (first section in page)
-                const heroSection = document.querySelector('section.min-h-screen');
-                if (!heroSection) return;
-
-                // Find the three text spans inside h1
-                const textSpans = heroSection.querySelectorAll('h1 .reveal-text');
-                if (textSpans.length >= 3) {
-                    if (hero.line1) textSpans[0].textContent = hero.line1;
-                    if (hero.line2) textSpans[1].textContent = hero.line2;
-                    if (hero.line3) textSpans[2].textContent = hero.line3;
-                }
-            } catch (error) {
-                console.log('Using static hero text');
-            }
-        }
-
-        // Load About section from CMS
-        async function loadAbout() {
-            try {
-                const response = await fetch('/content/settings/about.json');
-                const about = await response.json();
-
-                // Find about section (section with gray background)
-                const aboutSection = document.querySelector('section.bg-gray-200');
-                if (!aboutSection) return;
-
-                // Update name in the highlighted span
-                const nameSpan = aboutSection.querySelector('.bg-accent');
-                if (nameSpan && about.name) nameSpan.textContent = about.name;
-
-                // Update paragraphs
-                const paragraphs = aboutSection.querySelectorAll('.space-y-6 p.text-dark\\/80');
-                if (paragraphs.length >= 2) {
-                    if (about.paragraph1) paragraphs[0].innerHTML = `My name is <span class="bg-accent text-dark font-semibold px-2 py-1">${about.name || 'Juniper'}</span>, ${about.paragraph1}`;
-                    if (about.paragraph2) paragraphs[1].textContent = about.paragraph2;
-                }
-            } catch (error) {
-                console.log('Using static about text');
             }
         }
     </script>
