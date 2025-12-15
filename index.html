@@ -205,19 +205,36 @@
             style="pointer-events: auto; color: inherit;">JUNIPER.</a>
     </div>
 
-    <!-- Navigation - Get in Touch Button -->
-    <nav class="fixed top-6 right-6 md:right-12 z-[100]"
+    <!-- Navigation - Center Links + Start Project Button -->
+    <nav class="fixed top-6 left-0 right-0 z-[100] px-6 md:px-12 flex items-center justify-between"
         style="mix-blend-mode: difference; color: #FFFFFF; pointer-events: none;">
+        <!-- Center Navigation Links -->
+        <div class="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2"
+            style="pointer-events: auto;">
+            <a href="#about" class="text-sm font-medium tracking-wider hover:text-accent transition-colors"
+                style="color: inherit;">BIO</a>
+            <a href="#works" class="text-sm font-medium tracking-wider hover:text-accent transition-colors"
+                style="color: inherit;">WORKS</a>
+            <a href="#services" class="text-sm font-medium tracking-wider hover:text-accent transition-colors"
+                style="color: inherit;">SERVICES</a>
+        </div>
+        <!-- Start Project Button -->
         <a href="mailto:f626452@gmail.com"
-            class="px-6 py-3 border border-current text-sm font-medium transition-all duration-300 hover:bg-[#c8ff00] hover:text-black hover:border-[#c8ff00]"
+            class="ml-auto px-6 py-3 border border-current rounded-full text-sm font-medium transition-all duration-300 hover:bg-[#c8ff00] hover:text-black hover:border-[#c8ff00]"
             style="pointer-events: auto; color: inherit;">
-            Get in Touch
+            Start Project
         </a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center px-6 md:px-12">
-        <div class="w-full max-w-7xl mx-auto text-left">
+    <!-- Hero Section with Background Image -->
+    <section class="min-h-screen flex items-center px-6 md:px-12 relative overflow-hidden">
+        <!-- Background Image with Dark Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="/img/hero_bg_image.avif" alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/70"></div>
+        </div>
+        <!-- Content -->
+        <div class="w-full max-w-7xl mx-auto text-left relative z-10">
             <h1 class="font-display text-[14vw] leading-[0.8] font-semibold tracking-tighter uppercase">
                 <span class="block overflow-hidden">
                     <span class="block reveal-text text-white" style="animation-delay: 0.1s;">KIWISHEEP</span>
@@ -270,7 +287,7 @@
     </style>
 
     <!-- About Section - Light Gray Background -->
-    <section class="py-24 md:py-32 px-6 md:px-12 bg-gray-200">
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-gray-200" id="about">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
                 <div class="reveal-text">
