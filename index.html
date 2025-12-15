@@ -619,6 +619,66 @@
         });
     </script>
 
+    <!-- Dynamic Project Loader from CMS -->
+    <script>
+        // Load projects from CMS JSON file
+        async function loadProjects() {
+            try {
+                const response = await fetch('/content/projects.json');
+                const data = await response.json();
+                const projects = data.projects.filter(p => p.published !== false);
+
+                // Update project cards
+                updateProjectCards(projects);
+            } catch (error) {
+                console.log('Projects loaded from static HTML (CMS data not available)');
+            }
+        }
+
+        function updateProjectCards(projects) {
+            // Find all project cards by their labels
+            const projectLabels = ['Project A', 'Project B', 'Project C', 'Project D', 'Project E'];
+
+            projects.forEach((project, index) => {
+                if (index >= 5) return; // Only update first 5 cards
+
+                // Find elements containing the project label
+                const labelSpans = document.querySelectorAll('span');
+                labelSpans.forEach(span => {
+                    if (span.textContent.trim() === projectLabels[index]) {
+                        const card = span.closest('.grid');
+                        if (card) {
+                            // Update label
+                            span.textContent = project.label || projectLabels[index];
+
+                            // Update title
+                            const title = card.querySelector('h3');
+                            if (title) title.textContent = project.title;
+
+                            // Update subtitle (first p with text-accent)
+                            const subtitle = card.querySelector('p.text-accent');
+                            if (subtitle) subtitle.textContent = project.subtitle;
+
+                            // Update description (p with text-muted)
+                            const description = card.querySelector('p.text-muted');
+                            if (description) description.textContent = project.description;
+
+                            // Update image
+                            const img = card.querySelector('img');
+                            if (img && project.image) {
+                                img.src = project.image;
+                                img.alt = project.imageAlt || project.title;
+                            }
+                        }
+                    }
+                });
+            });
+        }
+
+        // Load projects when page is ready
+        document.addEventListener('DOMContentLoaded', loadProjects);
+    </script>
+
     <!-- Netlify Identity Redirect Script -->
     <script>
         if (window.netlifyIdentity) {

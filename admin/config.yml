@@ -7,43 +7,33 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 # 網站資訊
-site_url: https://juniperlin.github.io/Juniper_Profolio
-display_url: https://juniperlin.github.io/Juniper_Profolio
+site_url: https://juniper-profolio.netlify.app
+display_url: https://juniper-profolio.netlify.app
 
 # 內容集合
 collections:
-  # 專案作品集
-  - name: "projects"
-    label: "專案作品 (Projects)"
-    folder: "content/projects"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "標題 (Title)", name: "title", widget: "string" }
-      - { label: "專案代號 (Project Label)", name: "label", widget: "string", default: "Project" }
-      - { label: "副標題 (Subtitle)", name: "subtitle", widget: "string" }
-      - { label: "描述 (Description)", name: "description", widget: "text" }
-      - { label: "圖片 (Image)", name: "image", widget: "image" }
-      - { label: "圖片說明 (Image Alt)", name: "imageAlt", widget: "string" }
-      - { label: "排序 (Order)", name: "order", widget: "number", default: 1 }
-      - { label: "顯示 (Published)", name: "published", widget: "boolean", default: true }
-
-  # 網站設定
-  - name: "settings"
-    label: "網站設定 (Settings)"
+  # 網站資料
+  - name: "data"
+    label: "網站資料 (Site Data)"
     files:
-      - name: "about"
-        label: "關於我 (About)"
-        file: "content/settings/about.json"
+      # 專案作品列表
+      - name: "projects"
+        label: "專案作品 (Projects)"
+        file: "content/projects.json"
         fields:
-          - { label: "標題 (Heading)", name: "heading", widget: "string" }
-          - { label: "重點字 (Highlight Word)", name: "highlightWord", widget: "string" }
-          - { label: "名字 (Name)", name: "name", widget: "string" }
-          - { label: "介紹段落1 (Paragraph 1)", name: "paragraph1", widget: "text" }
-          - { label: "介紹段落2 (Paragraph 2)", name: "paragraph2", widget: "text" }
-          - { label: "為什麼重要標題 (Why Matters Title)", name: "whyMattersTitle", widget: "string" }
-          - { label: "為什麼重要內容 (Why Matters Content)", name: "whyMattersContent", widget: "text" }
+          - label: "專案列表 (Project List)"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "標題 (Title)", name: "title", widget: "string" }
+              - { label: "專案代號 (Label)", name: "label", widget: "string", default: "Project" }
+              - { label: "副標題 (Subtitle)", name: "subtitle", widget: "string" }
+              - { label: "描述 (Description)", name: "description", widget: "text" }
+              - { label: "圖片網址 (Image URL)", name: "image", widget: "string" }
+              - { label: "圖片說明 (Image Alt)", name: "imageAlt", widget: "string" }
+              - { label: "顯示 (Published)", name: "published", widget: "boolean", default: true }
 
+      # 首頁標題
       - name: "hero"
         label: "首頁標題 (Hero)"
         file: "content/settings/hero.json"
@@ -51,3 +41,12 @@ collections:
           - { label: "第一行 (Line 1)", name: "line1", widget: "string" }
           - { label: "第二行 (Line 2)", name: "line2", widget: "string" }
           - { label: "第三行 (Line 3)", name: "line3", widget: "string" }
+
+      # 關於我
+      - name: "about"
+        label: "關於我 (About)"
+        file: "content/settings/about.json"
+        fields:
+          - { label: "名字 (Name)", name: "name", widget: "string" }
+          - { label: "介紹段落1 (Paragraph 1)", name: "paragraph1", widget: "text" }
+          - { label: "介紹段落2 (Paragraph 2)", name: "paragraph2", widget: "text" }
