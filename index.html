@@ -208,7 +208,7 @@
     <!-- Navigation - Get in Touch Button -->
     <nav class="fixed top-6 right-6 md:right-12 z-[100]"
         style="mix-blend-mode: difference; color: #FFFFFF; pointer-events: none;">
-        <a href="#contact"
+        <a href="mailto:f626452@gmail.com"
             class="px-6 py-3 border border-current text-sm font-medium transition-all duration-300 hover:bg-[#c8ff00] hover:text-black hover:border-[#c8ff00]"
             style="pointer-events: auto; color: inherit;">
             Get in Touch
@@ -232,6 +232,43 @@
         </div>
     </section>
 
+    <!-- Marquee Section - Neon Green Background -->
+    <section class="py-4 bg-accent overflow-hidden">
+        <div class="marquee-container">
+            <div class="marquee-content" id="marquee-text">
+                <span class="font-display font-bold text-dark text-xl md:text-2xl tracking-wide px-8">
+                    ✦ LOADING... ✦
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+    </style>
+
     <!-- About Section - Light Gray Background -->
     <section class="py-24 md:py-32 px-6 md:px-12 bg-gray-200">
         <div class="max-w-7xl mx-auto">
@@ -243,12 +280,12 @@
                     <div class="space-y-6 text-muted text-lg leading-relaxed">
                         <p class="text-dark/80">
                             My name is <span class="bg-accent text-dark font-semibold px-2 py-1">Juniper</span>,
-                            and that's my competitive
-                            advantage. Before I mastered React and Frontend architecture, I mastered the art of human
-                            connection in international sales and the precision of logistics at Lion Travel.
+                            Sales Veteran. Frontend Developer.
+                            I combine 5+ years of international client-facing experience with modern web skills.
                         </p>
                         <p class="text-dark/80">
-                            I've worked across Australia and Taiwan, from high-end fashion to warehouse supply chains.
+                            I don’t just write code; I use my background in sales and service to build digital
+                            tools that truly connect with your users.
                         </p>
                     </div>
                     <div class="mt-10 p-6 bg-white border-l-2 border-accent">
@@ -482,27 +519,29 @@
                         <i data-lucide="code-2" class="w-7 h-7 text-accent"></i>
                     </div>
                     <h3 class="font-display font-semibold text-2xl tracking-tight mb-4">
-                        Custom Web Development
+                        AI-Accelerated Development
                     </h3>
                     <p class="text-muted leading-relaxed">
-                        I build high-performance landing pages or e-commerce frontends tailored to your market. I
-                        leverage my expertise in React, Tailwind, and Firebase to create assets that don't just look
-                        good—they perform.
+                        I don't just write code; I orchestrate it. By leveraging advanced AI workflows
+                        (Antigravity & Cursor), I build robust React/Tailwind websites with extreme
+                        precision and speed. You get a high-performance digital product in half the time
+                        of traditional development, without sacrificing quality.
                     </p>
                 </div>
 
                 <!-- Service 2 -->
                 <div class="card-hover p-8 md:p-10 bg-dark border border-border rounded-lg">
                     <div class="w-14 h-14 flex items-center justify-center bg-accent/10 rounded-xl mb-6">
-                        <i data-lucide="users" class="w-7 h-7 text-accent"></i>
+                        <i data-lucide="sparkles" class="w-7 h-7 text-accent"></i>
                     </div>
                     <h3 class="font-display font-semibold text-2xl tracking-tight mb-4">
-                        1-on-1 Tech Empowerment
+                        AI Visuals & Content Strategy
                     </h3>
                     <p class="text-muted leading-relaxed">
-                        I believe in "learning by doing." If you are a beginner wanting to understand AI tools, basic
-                        frontend logic, or how to streamline your own workflow, I offer personalized coaching sessions
-                        to help you build digital confidence.
+                        A website is empty without a story. Drawing from my experience in generative art
+                        (Skeley Project), I create unique, on-brand AI imagery and compelling copy for your site.
+                        No need to hire a separate designer or copywriter—I deliver the complete package,
+                        ready to launch.
                     </p>
                 </div>
             </div>
@@ -520,11 +559,11 @@
                 the same care I give to my own passions—detail-oriented, dedicated, and human-centric.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                <a href="mailto:juniper@example.com"
+                <a href="mailto:f626452@gmail.com"
                     class="px-8 py-4 bg-dark text-white font-semibold hover:bg-dark/90 transition-colors duration-300">
                     Connect with Juniper
                 </a>
-                <a href="#"
+                <a href="tel:+886972968929"
                     class="px-8 py-4 border border-dark/20 text-dark font-semibold hover:border-dark hover:bg-dark hover:text-white transition-all duration-300">
                     Book a Consultation
                 </a>
@@ -532,13 +571,16 @@
 
             <!-- Social Links -->
             <div class="flex justify-center gap-6">
-                <a href="#" class="text-dark/60 hover:text-dark transition-colors link-underline">
-                    LinkedIn
+                <a href="https://www.instagram.com/wtf017?igsh=MWlyMTN0dm9hYnNxeA%3D%3D&utm_source=qr"
+                    class="text-dark/60 hover:text-dark transition-colors link-underline">
+                    Instagram
                 </a>
-                <a href="#" class="text-dark/60 hover:text-dark transition-colors link-underline">
-                    Twitter (X)
+                <a href="https://www.facebook.com/share/1FFzW4TzB8/?mibextid=wwXIfr"
+                    class="text-dark/60 hover:text-dark transition-colors link-underline">
+                    Facebook
                 </a>
-                <a href="#" class="text-dark/60 hover:text-dark transition-colors link-underline">
+                <a href="https://github.com/JuniperLin"
+                    class="text-dark/60 hover:text-dark transition-colors link-underline">
                     GitHub
                 </a>
             </div>
@@ -553,7 +595,7 @@
             </p>
             <a href="https://aidesigner.ai" target="_blank"
                 class="text-muted text-sm hover:text-accent transition-colors">
-                Made with AIDesigner
+                Made By KiwiSheep
             </a>
         </div>
     </footer>
@@ -620,10 +662,32 @@
     </script>
     <!-- Dynamic Content Loader from CMS -->
     <script>
-        // Load projects from CMS
+        // Load content from CMS
         document.addEventListener('DOMContentLoaded', async () => {
+            await loadMarquee();
             await loadProjects();
         });
+
+        // Load marquee text from CMS
+        async function loadMarquee() {
+            try {
+                const response = await fetch('/content/settings/marquee.json');
+                const data = await response.json();
+                const marqueeEl = document.getElementById('marquee-text');
+                if (marqueeEl && data.text) {
+                    const repeatCount = 10;
+                    const text = `<span class="font-display font-bold text-dark text-xl md:text-2xl tracking-wide px-8">✦ ${data.text} ✦</span>`;
+                    marqueeEl.innerHTML = text.repeat(repeatCount);
+                }
+            } catch (error) {
+                console.log('Using default marquee text');
+                const marqueeEl = document.getElementById('marquee-text');
+                if (marqueeEl) {
+                    const defaultText = '<span class="font-display font-bold text-dark text-xl md:text-2xl tracking-wide px-8">✦ WELCOME TO KIWISHEEP DESIGN STUDIO ✦</span>';
+                    marqueeEl.innerHTML = defaultText.repeat(10);
+                }
+            }
+        }
 
         // Load and generate project cards dynamically
         async function loadProjects() {

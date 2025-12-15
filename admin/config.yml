@@ -12,6 +12,16 @@ display_url: https://juniper-profolio.netlify.app
 
 # 內容集合
 collections:
+  # 網站設定
+  - name: "settings"
+    label: "網站設定 (Settings)"
+    files:
+      - name: "marquee"
+        label: "跑馬燈文字 (Marquee)"
+        file: "content/settings/marquee.json"
+        fields:
+          - { label: "跑馬燈文字 (Marquee Text)", name: "text", widget: "string", hint: "這段文字會在首頁跑馬燈顯示" }
+
   # 專案作品
   - name: "data"
     label: "網站資料 (Site Data)"
