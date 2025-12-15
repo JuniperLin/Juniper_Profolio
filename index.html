@@ -251,7 +251,7 @@
 
         .marquee-content {
             display: inline-block;
-            animation: marquee 20s linear infinite;
+            animation: marquee 40s linear infinite;
         }
 
         @keyframes marquee {
@@ -783,6 +783,8 @@
                     window.location.href = '/admin/';
                     logoClickCount = 0;
                 } else {
+                    // 單次點擊：回到頁首
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                     logoClickTimer = setTimeout(() => {
                         logoClickCount = 0;
                     }, 2000);
