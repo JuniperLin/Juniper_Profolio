@@ -1,10 +1,6 @@
 backend:
-  name: github
-  repo: JuniperLin/Juniper_Profolio
+  name: git-gateway
   branch: main
-
-# 本地開發用，部署時可以移除
-local_backend: true
 
 # 媒體檔案設定
 media_folder: "images/uploads"
